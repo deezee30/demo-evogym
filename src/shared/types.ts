@@ -12,3 +12,9 @@ export interface BenefitModel {
     title: string,
     description: string,
 };
+
+export interface ClassModel {
+    name: string,
+    description?: string,
+    image: string,
+};
