@@ -4,3 +4,11 @@ export enum NavPage {
     Classes = "our-classes",
     Contact = "contact-us",
 };
+
+export type SetNavPage = (selectedPage: NavPage) => void;
+
+export interface BenefitModel {
+    icon: JSX.Element,
+    title: string,
+    description: string,
+};

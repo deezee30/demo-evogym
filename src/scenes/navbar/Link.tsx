@@ -1,10 +1,10 @@
-import { NavPage } from "@/shared/types";
+import { NavPage, SetNavPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 interface Props {
     page: NavPage,
     selectedPage: NavPage,
-    setSelectedPage: (page: NavPage) => void,
+    setSelectedPage: SetNavPage,
 }
 
 const Link = ({

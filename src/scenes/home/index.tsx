@@ -1,5 +1,5 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { NavPage } from "@/shared/types";
+import { NavPage, SetNavPage } from "@/shared/types";
 import HomePageText from "@/assets/HomePageText.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
@@ -10,7 +10,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
 interface Props {
-    setSelectedPage: (selectedPage: NavPage) => void,
+    setSelectedPage: SetNavPage,
 }
 
 const Home = ({ setSelectedPage }: Props) => {
@@ -18,7 +18,7 @@ const Home = ({ setSelectedPage }: Props) => {
 
     return (
         <section
-            id="home"
+            id={NavPage.Home}
             className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0"
         >
             {/* Flex container */}
@@ -37,8 +37,8 @@ const Home = ({ setSelectedPage }: Props) => {
                             transition={{ duration: 0.5 }}
                             viewport={{ once: true, amount: 0.5 }}
                             variants={{
-                                "hidden": { opacity: 0, x: -50 },
-                                "visible": { opacity: 1, x: 0 },
+                                hidden: { opacity: 0, x: -50 },
+                                visible: { opacity: 1, x: 0 },
                             }}
                         >
                             <img
@@ -61,8 +61,8 @@ const Home = ({ setSelectedPage }: Props) => {
                             transition={{ delay: 0.2, duration: 0.5 }}
                             viewport={{ once: true, amount: 0.5 }}
                             variants={{
-                                "hidden": { opacity: 0, x: -50 },
-                                "visible": { opacity: 1, x: 0 },
+                                hidden: { opacity: 0, x: -50 },
+                                visible: { opacity: 1, x: 0 },
                             }}
                         >
                             <ActionButton
@@ -71,7 +71,7 @@ const Home = ({ setSelectedPage }: Props) => {
                                 Join Now
                             </ActionButton>
                             <AnchorLink
-                                className="text-sm font-bold text-primary-500 underline"
+                                className="text-sm font-bold text-primary-500 hover:text-primary-300 underline"
                                 onClick={() => setSelectedPage(NavPage.Contact)}
                                 href={`#${NavPage.Contact}`}
                             >

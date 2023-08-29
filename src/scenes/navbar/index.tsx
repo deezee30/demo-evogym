@@ -1,6 +1,6 @@
 import Logo from "@/assets/Logo.png";
 import Link from "./Link";
-import { NavPage } from "@/shared/types";
+import { NavPage, SetNavPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { ReactNode, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -10,13 +10,13 @@ const flexBetween = "flex items-center justify-between";
 
 interface Props {
     selectedPage: NavPage,
-    setSelectedPage: (page: NavPage) => void,
+    setSelectedPage: SetNavPage,
     isTopOfPage: boolean,
 };
 
 function InnerNavBarExpanded(
     selectedPage: NavPage,
-    setSelectedPage: (page: NavPage) => void,
+    setSelectedPage: SetNavPage,
 ): ReactNode {
     return (
         <div className={`${flexBetween} w-full`}>
@@ -78,7 +78,7 @@ const NavBar = ({
 }: Props) => {
     const isExpandedView = useMediaQuery("(min-width: 1060px)");
     const [isMenuBarToggled, setMenuBarToggled] = useState(false);
-    const navBarBackground = isTopOfPage ? "bg-primary-100 drop-shadow" : "";
+    const navBarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
     return (
         <nav>

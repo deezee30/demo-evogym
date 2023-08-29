@@ -1,10 +1,10 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { NavPage } from "./types";
+import { NavPage, SetNavPage } from "./types";
 import { ReactNode } from "react";
 
 interface Props {
     children: ReactNode,
-    setSelectedPage: (page: NavPage) => void,
+    setSelectedPage: SetNavPage,
 }
 
 const ActionButton = ({ children, setSelectedPage, }: Props) => {
