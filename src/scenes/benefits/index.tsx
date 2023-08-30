@@ -45,11 +45,11 @@ interface Props {
 const Benefits = ({ setSelectedPage }: Props) => {
     return (
         <section
+            className="min-h-full w-full py-20"
             id={NavPage.Benefits}
-            className="mx-auto min-h-full w-5/6 py-20"
         >
             <motion.div
-                className="md:h-5/6 w-5/6 mx-auto items-center justify-center"
+                className="md:h-5/6 mx-auto w-5/6 items-center justify-center"
                 onViewportEnter={() => setSelectedPage(NavPage.Benefits)}
             >
                 {/* Header */}
